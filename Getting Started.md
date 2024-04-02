@@ -35,3 +35,22 @@
     1. Update OpenAPI Support extension
 
 ## Lab Setup
+
+## CrAPI
+1. Download CrAPI - curl -o docker-compose.yml https://raw.githubusercontent.com/OWASP/crAPI/main/deploy/docker/docker-compose.yml
+2. mkdir crapi && mv docker-compose.yml crapi
+3. cd crapi
+4. sudo docker-compose pull
+5. sudo docker-compose -f docker-compose.yml --compatibility up -d 
+6. Browse to http://localhost:8888/login for CrAPI
+7. Browse to http://localhost:8025/ for MailHog (Mail server)
+
+## Vapi
+1. sudo git clone https://github.com/roottusk/vapi.git
+2. cd vapi 
+3. sudo docker-compose up -d 
+4. Browse to http://localhost/vapi
+
+> check running docker images - sudo docker-compose ps
+
+> to stop - sudo docker-compose stop
