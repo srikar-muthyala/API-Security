@@ -127,6 +127,7 @@ Windows
 
 
 ## Note
+**Remember to not put space before payload list directory**
 1. Look at how the payload is getting succeeded in execution. 
      
         wfuzz -z file,test -H "Content-Type: application/json" -d "{\"username\":\"FUZZ\",\"password\":\"password\"}" -p localhost:8080 http://localhost/vapi/api8/user/login
