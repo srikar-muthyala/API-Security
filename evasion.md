@@ -1,3 +1,5 @@
+https://github.com/0xInfection/Awesome-WAF
+
 ## Intro
 Often times security controls like web applications firewalls (WAFs) and rate-limiting can block your attacks. Security controls may differ from one API provider to the next, but at a high level, they will have some threshold for malicious activity that will trigger a response. WAFs, for example, can be triggered by a wide variety of things, like:
 
@@ -174,3 +176,4 @@ If, instead, you want each payload to be processed by multiple encoders, separat
     -z list, TEST1, base64@base64@md5
 
 In this example, Wfuzz would first create an MD5 hash of the payload (TEST1) and then base64 encode it twice. These Burp Suite and Wfuzz options will help you process your attacks in ways that help you sneak past whatever security controls stand in your way. 
+
